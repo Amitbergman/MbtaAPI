@@ -1,4 +1,4 @@
-# MBTA api integration project
+# MBTA API Integration Project
 This repository is using MBTA API to extract and display data on subway routes in Boston.
 
 MBTA API documentation - https://api-v3.mbta.com/docs/swagger/index.html

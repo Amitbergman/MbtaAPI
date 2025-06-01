@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-# Model that is representing subway route
+# Model that is representing a subway route
 @dataclass
 class Route:
     id: str
