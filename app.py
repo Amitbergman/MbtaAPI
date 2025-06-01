@@ -8,7 +8,7 @@ def print_all_routes(routes: list[Route]):
     for subway_route in routes:
         print(subway_route.full_name)
 
-# Print routes with minimal and maximal number of stops (Question 2.a, 2.b)
+# Print routes with minimal and maximal number of stops (Questions 2.a, 2.b)
 def print_minimal_and_maximal_stops(route_to_stop_map : dict[str, list[Stop]]):
     
     maximal_stops = max(route_to_stop_map, key=lambda a:len(route_to_stop_map[a]))
@@ -24,7 +24,6 @@ def print_stops_with_more_than_one_route(stop_to_routes_map: dict[str, list[str]
     for stop_name, routes in stop_to_routes_map.items():
         if (len(routes) > 1):
             print(f"Stop name: {stop_name}. route names: {routes}")
-
 
 if __name__ == "__main__":
     # Retrieving the raw data once, and then using it for all questions

@@ -4,7 +4,6 @@ from models import Route, Stop
 
 # retrieves all the subway routes from the MBTA API (hitting the "routes" endpoint and filtering for "subway routes")
 def get_all_subway_routes() -> list[Route]:
-    # Ideally, I would retrieve this API key from a key vault, but in this specific case, this API key is not a valuable secret, it only controls the rate limiting, and cannot be used to access my personal data or any resourece
     query_params = {
         "api_key" : constants.MBTA_API_KEY,
         "filter[type]": constants.SUBWAY_ROUTES_TYPES_FILTER}
@@ -14,7 +13,7 @@ def get_all_subway_routes() -> list[Route]:
     # The backend is probably filtering it in their SQL query, so the calculation in the backend will be faster
     # The payload that I will be getting back in the http response will be substantially smaller (178 items compared to 8) which will make the http request return faster as less bandwidth is used
     all_routes_api_response = requests.get(
-        url=constants.ROUTES_URI,
+        url=constants.MBTA_API_URI + "/" + constants.ROUTES_ENDPOINT,
         params=query_params)
     status_code = all_routes_api_response.status_code
 
@@ -39,7 +38,7 @@ def get_list_of_stops_by_route_id(route_id: str) -> list[Stop]:
         "filter[route]": route_id
         }
     all_stops_by_id = requests.get(
-        url=constants.STOPS_URI,
+        url=constants.MBTA_API_URI + "/" + constants.STOPS_ENDPOINT,
         params=stops_params
     )
     assert all_stops_by_id.status_code == 200, f"Error fetching stops for route: {route_id}. status code: {all_stops_by_id.status_code}"
