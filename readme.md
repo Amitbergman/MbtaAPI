@@ -8,8 +8,8 @@ MBTA API documentation - https://api-v3.mbta.com/docs/swagger/index.html
 
 This project contains the following modules:
 1. `data_provider.py` - handles the interaction with the MBTA api, parsing the data, and returning it in abstract models
-1. `paths_calculator.py` - respobsible for executing the algorithm that calculates paths from stop i to stop j
-1. `user_interaction.py` - manages the interation with the user (user inserts source and destination stops, and gets a path to get from source to destination)
+1. `paths_calculator.py` - responsible for executing the algorithm that calculates paths from stop i to stop j
+1. `user_interaction.py` - manages the interaction with the user (the user inserts source and destination stops, and gets a path to get from source to destination)
 1. `models.py` - contracts (abstract types) for objects that this project uses (Route, Stop)
 1. `app.py` - main execution module (using the above modules to manage the execution flow)
 1. `tests.py` - tests for other modules
