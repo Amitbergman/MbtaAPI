@@ -1,0 +1,5 @@
+ROUTES_URI = "https://api-v3.mbta.com/routes"
+STOPS_URI = "https://api-v3.mbta.com/stops"
+MBTA_API_KEY = "ed8da688c57344cdafa859a2b5b2eb1a"
+SUBWAY_ROUTES_TYPES_FILTER = "0,1"
+CANCELLATION_KEYWORD = "cancel"
