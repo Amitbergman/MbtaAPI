@@ -18,10 +18,14 @@ This project contains the following modules:
 
 ### Using docker
 
+From root directory:
+
 1. `docker build -t mbta-python-app .`
 1. `docker run -it mbta-python-app`
 
-### Using python:
+### Using python
+
+From root directory:
 
 1. `pip install requests` (install prerequisite of [requests python package](https://pypi.org/project/requests/))
 1. `python app.py`
@@ -29,13 +33,13 @@ This project contains the following modules:
 
 ## Run the tests
 
-### Using docker:
+### Using docker
 
 Just run `docker build -t mbta-python-app .`.
 
 This is running the `tests.py` file as part of building the docker image - the build will fail if the tests are failing.
 
-### Using python:
+### Using python
 
 RUN `python tests.py`
 
